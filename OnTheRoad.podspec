@@ -15,12 +15,12 @@ The Mapzen Turn-by-Turn API makes it easy to let navigation find its way into yo
   s.homepage     = "https://github.com/mapzen/on-the-road_ios"
   s.license      = "MIT"
 
-  s.author             = { "TrailBehind, Inc." => "Jesse@Gaiagps.com", "Mapzen" => "ios-support@mapzen.com" }
+  s.author             = { "Alex, Inc." => "maxime.glob@@gmail.com" }
   s.social_media_url   = "http://twitter.com/mapzen"
 
   s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/mapzen/on-the-road_ios.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/Alex237/on-the-road_ios.git", :tag => "v#{s.version}" }
 
   s.source_files  = "OTRRouting/*.{h,m,c}"
 
