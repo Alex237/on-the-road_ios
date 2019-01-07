@@ -2,7 +2,7 @@
 //  OTRRoutingPoint.m
 //  on-the-road_ios
 //
-//  Based upon the work in TBMapzenRouting created by Jesse Crocker
+//  Based upon the work in OTRRouting created by Jesse Crocker
 //
 //
 
@@ -18,6 +18,13 @@
   return point;
 }
 
+
++ (instancetype)pointWithCoreCoordinate:(CLLocationCoordinate2D)coordinate type:(OTRRoutingPointType)type {
+  OTRRoutingPoint *point = [[OTRRoutingPoint alloc] init];
+  point.location = coordinate;
+  point.type = type;
+  return point;
+}
 
 - (NSDictionary * _Nonnull)asDictionary {
   NSDictionary *dictionary = @{

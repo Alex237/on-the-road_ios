@@ -2,7 +2,7 @@
 //  OTRRoutingResult.m
 //  on-the-road_ios
 //
-//  Based upon the work in TBMapzenRouting created by Jesse Crocker
+//  Based upon the work in OTRRouting created by Jesse Crocker
 //
 //
 
@@ -14,8 +14,8 @@
 + (instancetype _Nullable)resultFromResponse:(NSDictionary * _Nonnull)response {
   OTRRoutingResult *result = [[OTRRoutingResult alloc] init];
   NSDictionary *trip = response[@"trip"];
-  result.length = [trip[@"summary"][@"length"] doubleValue];
-  result.time = [trip[@"summary"][@"time"] doubleValue];
+  result.length = (CGFloat) [trip[@"summary"][@"length"] doubleValue];
+  result.time = (CGFloat) [trip[@"summary"][@"time"] doubleValue];
   result.units = trip[@"units"];
   result.language = trip[@"language"];
   result.locations = trip[@"locations"];

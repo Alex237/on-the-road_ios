@@ -1,6 +1,6 @@
 //
 //  OTRRoutingControllerTests.m
-//  TBMapzenRouting
+//  OTRRouting
 //
 //  Created by Sarah Lensing on 3/10/17.
 //  Copyright © 2017 Trailbehind inc. All rights reserved.
@@ -63,7 +63,7 @@
 - (void)testCurrentLocaleLanguageSetByDefault {
   OTRRoutingPoint *loc1 = [[OTRRoutingPoint alloc] init];
   OTRRoutingPoint *loc2 = [[OTRRoutingPoint alloc] init];
-  NSArray<OTRRoutingPoint*> *locations = [NSArray arrayWithObjects:loc1, loc2, nil];
+  NSArray<OTRRoutingPoint*> *locations = @[loc1, loc2];
   [controller requestRouteWithLocations:locations
                             costingModel:OTRRoutingCostingModelAuto
                            costingOption:nil
@@ -71,16 +71,16 @@
                                 callback:^(OTRRoutingResult * _Nullable result, id  _Nullable invalidationToken, NSError * _Nullable error) {
                                   //
                                 }];
-  NSDictionary *directionsOptions = [urlSessionManager.queryParameters objectForKey:@"directions_options"];
+  NSDictionary *directionsOptions = urlSessionManager.queryParameters[@"directions_options"];
   XCTAssertNotNil(directionsOptions);
-  XCTAssertEqualObjects([directionsOptions objectForKey:@"language"], [NSLocale currentLocale].languageCode);
+  XCTAssertEqualObjects(directionsOptions[@"language"], [NSLocale currentLocale].languageCode);
 }
 
 - (void)testLanguageSetInDirectionsOptions {
   OTRRoutingPoint *loc1 = [[OTRRoutingPoint alloc] init];
   OTRRoutingPoint *loc2 = [[OTRRoutingPoint alloc] init];
-  NSArray<OTRRoutingPoint*> *locations = [NSArray arrayWithObjects:loc1, loc2, nil];
-  NSDictionary *options = [NSDictionary dictionaryWithObject:@"fr-FR" forKey:@"language"];
+  NSArray<OTRRoutingPoint*> *locations = @[loc1, loc2];
+  NSDictionary *options = @{@"language": @"fr-FR"};
   [controller requestRouteWithLocations:locations
                            costingModel:OTRRoutingCostingModelAuto
                           costingOption:nil
@@ -88,9 +88,9 @@
                                callback:^(OTRRoutingResult * _Nullable result, id  _Nullable invalidationToken, NSError * _Nullable error) {
                                  //
                                }];
-  NSDictionary *directionsOptions = [urlSessionManager.queryParameters objectForKey:@"directions_options"];
+  NSDictionary *directionsOptions = urlSessionManager.queryParameters[@"directions_options"];
   XCTAssertNotNil(directionsOptions);
-  XCTAssertEqualObjects([directionsOptions objectForKey:@"language"], @"fr-FR");
+  XCTAssertEqualObjects(directionsOptions[@"language"], @"fr-FR");
 }
 
 @end

@@ -2,12 +2,13 @@
 //  OTRRoutingResultLeg.h
 //  on-the-road_ios
 //
-//  Based upon the work in TBMapzenRouting created by Jesse Crocker
+//  Based upon the work in OTRRouting created by Jesse Crocker
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <CoreLocation/CoreLocation.h>
 #import "OTRRoutingResultManeuver.h"
 #import "OTRRoutingTypes.h"
 
@@ -33,6 +34,14 @@
  This array is owned by the leg, and will be free()'ed when the the leg is dealloc'ed. If you need to keep this array around past the life of this object, copy it to a new array owned by another object.
  */
 @property (nonatomic, readonly, nullable) OTRGeoPoint *coordinates;
+
+
+/** An array of coordinates representing the geometry of the leg path.
+
+ This array is owned by the leg, and will be free()'ed when the the leg is dealloc'ed. If you need to keep this array around past the life of this object, copy it to a new array owned by another object.
+ */
+@property (nonatomic, readonly, nullable) CLLocationCoordinate2D *locations;
+
 
 /** 
  Create a leg object by parsing an element of the leg array of the server json response. 

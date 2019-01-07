@@ -2,7 +2,7 @@
 //  OTRRoutingTypes.m
 //  on-the-road_ios
 //
-//  Based upon the work in TBMapzenRouting created by Jesse Crocker
+//  Based upon the work in OTRRouting created by Jesse Crocker
 //
 //
 
@@ -32,6 +32,7 @@ OTRGeoPoint OTRGeoPointMake(double latitude, double longitude){
     case OTRRoutingCostingModelPedestrian:
       return @"pedestrian";
   }
+  return nil;
 }
 
 
@@ -42,6 +43,7 @@ OTRGeoPoint OTRGeoPointMake(double latitude, double longitude){
     case OTRRoutingPointTypeThrough:
       return @"through";
   }
+  return nil;
 }
 
 @end

@@ -10,6 +10,7 @@
 		7DC7F09E1E73583B009E722B /* OTRRoutingControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7F09D1E73583B009E722B /* OTRRoutingControllerTests.m */; };
 		884C2B711D411E6A003E29FA /* OTRRoutingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884C2B661D411E6A003E29FA /* OTRRoutingController.m */; };
 		884C2B721D411E6B003E29FA /* OTRRoutingPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 884C2B681D411E6A003E29FA /* OTRRoutingPoint.m */; };
+		A40478756D55D022A6A53513 /* OTRRoutingPolylineUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A4047E10AE543E548AF8A831 /* OTRRoutingPolylineUtils.m */; };
 		DB0EA1D21D673DB3005BB5C2 /* OTRRoutingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0EA1D11D673DB3005BB5C2 /* OTRRoutingResult.m */; };
 		DBBCD17F1D67401100458560 /* OTRRoutingResultLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBCD17E1D67401100458560 /* OTRRoutingResultLeg.m */; };
 		DBBCD1821D67419000458560 /* OTRRoutingResultManeuver.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBCD1811D67419000458560 /* OTRRoutingResultManeuver.m */; };
@@ -68,6 +69,8 @@
 		884C2B661D411E6A003E29FA /* OTRRoutingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRRoutingController.m; sourceTree = "<group>"; };
 		884C2B671D411E6A003E29FA /* OTRRoutingPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRRoutingPoint.h; sourceTree = "<group>"; };
 		884C2B681D411E6A003E29FA /* OTRRoutingPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRRoutingPoint.m; sourceTree = "<group>"; };
+		A404704D7610AC600BD7D243 /* OTRRoutingPolylineUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRRoutingPolylineUtils.h; sourceTree = "<group>"; };
+		A4047E10AE543E548AF8A831 /* OTRRoutingPolylineUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRRoutingPolylineUtils.m; sourceTree = "<group>"; };
 		DB0EA1D01D673DB3005BB5C2 /* OTRRoutingResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRRoutingResult.h; sourceTree = "<group>"; };
 		DB0EA1D11D673DB3005BB5C2 /* OTRRoutingResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRRoutingResult.m; sourceTree = "<group>"; };
 		DBBCD17D1D67401100458560 /* OTRRoutingResultLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRRoutingResultLeg.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				DBBCD1811D67419000458560 /* OTRRoutingResultManeuver.m */,
 				DBBCD1831D67432100458560 /* OTRRoutingTypes.h */,
 				DBBCD1841D67432100458560 /* OTRRoutingTypes.m */,
+				A4047E10AE543E548AF8A831 /* OTRRoutingPolylineUtils.m */,
+				A404704D7610AC600BD7D243 /* OTRRoutingPolylineUtils.h */,
 			);
 			path = OTRRouting;
 			sourceTree = "<group>";
@@ -249,23 +254,25 @@
 		884C2B501D411E48003E29FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
-				ORGANIZATIONNAME = "Trailbehind inc.";
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Proowess.;
 				TargetAttributes = {
 					884C2B571D411E48003E29FA = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					DBDE06C01D77452400EF020F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3E82EU2753;
 						ProvisioningStyle = Automatic;
 					};
 					DBDE06C81D77452400EF020F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3E82EU2753;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 884C2B531D411E48003E29FA /* Build configuration list for PBXProject "TBMapzenRouting" */;
+			buildConfigurationList = 884C2B531D411E48003E29FA /* Build configuration list for PBXProject "OTRRouting" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -312,6 +319,7 @@
 				DB0EA1D21D673DB3005BB5C2 /* OTRRoutingResult.m in Sources */,
 				884C2B721D411E6B003E29FA /* OTRRoutingPoint.m in Sources */,
 				884C2B711D411E6A003E29FA /* OTRRoutingController.m in Sources */,
+				A40478756D55D022A6A53513 /* OTRRoutingPolylineUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,12 +375,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -419,12 +429,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -479,6 +491,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3E82EU2753;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -503,6 +516,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3E82EU2753;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -524,6 +538,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 3E82EU2753;
 				INFOPLIST_FILE = on_the_roadTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mapzen.on-the-roadTests";
@@ -537,6 +552,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 3E82EU2753;
 				INFOPLIST_FILE = on_the_roadTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mapzen.on-the-roadTests";
@@ -547,7 +563,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		884C2B531D411E48003E29FA /* Build configuration list for PBXProject "TBMapzenRouting" */ = {
+		884C2B531D411E48003E29FA /* Build configuration list for PBXProject "OTRRouting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				884C2B5F1D411E48003E29FA /* Debug */,

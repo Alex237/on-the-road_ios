@@ -2,17 +2,21 @@
 //  OTRRoutingPoint.h
 //  on-the-road_ios
 //
-//  Based upon the work in TBMapzenRouting created by Jesse Crocker
+//  Based upon the work in OTRRouting created by Jesse Crocker
 //
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "OTRRoutingTypes.h"
 
 /**
  `OTRRoutingPoint` is a data structure object used when communicating with a Valhalla routing server. Two routing points at a minimum are necessary to create a route, and providing multiple will create multiple route legs in the server response. 
  */
 @interface OTRRoutingPoint : NSObject
+
+/** Coordinate of the point */
+@property (nonatomic, assign) CLLocationCoordinate2D location;
 
 /** Coordinate of the point */
 @property (nonatomic, assign) OTRGeoPoint coordinate;
@@ -33,6 +37,16 @@
  @return A fully formed routing point usable in requesting routes from the web api.
  */
 + (instancetype _Nonnull)pointWithCoordinate:(OTRGeoPoint)coordinate type:(OTRRoutingPointType)type;
+
+
+/**
+ Create a new point.
+ @param coordinate
+ @param type
+
+ @return A fully formed routing point usable in requesting routes from the web api.
+ */
++ (instancetype _Nonnull)pointWithCoreCoordinate:(CLLocationCoordinate2D)coordinate type:(OTRRoutingPointType)type;
 
 /** Get the dictionary representation of the point, used for creating server query. */
 - (NSDictionary * _Nonnull)asDictionary;

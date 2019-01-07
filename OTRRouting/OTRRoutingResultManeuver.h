@@ -2,7 +2,7 @@
 //  OTRRoutingResultManeuver.h
 //  on-the-road_ios
 //
-//  Based upon the work in TBMapzenRouting created by Jesse Crocker
+//  Based upon the work in OTRRouting created by Jesse Crocker
 //
 //
 

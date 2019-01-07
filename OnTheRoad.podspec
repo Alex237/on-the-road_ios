@@ -24,4 +24,6 @@ The Mapzen Turn-by-Turn API makes it easy to let navigation find its way into yo
 
   s.source_files  = "OTRRouting/*.{h,m,c}"
 
+  s.framework = "CoreLocation"
+
 end

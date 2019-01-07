@@ -10,7 +10,7 @@ test:
         PROVISIONING_PROFILE=
         -sdk iphonesimulator
         -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
-        -project TBMapzenRouting.xcodeproj
+        -project OTRRouting.xcodeproj
         -scheme "on_the_road"
         clean build test |
       tee $CIRCLE_ARTIFACTS/xcode_raw.log |

@@ -2,7 +2,7 @@
 //  OTRRoutingResultManeuver.m
 //  on-the-road_ios
 //
-//  Based upon the work in TBMapzenRouting created by Jesse Crocker
+//  Based upon the work in OTRRouting created by Jesse Crocker
 //
 //
 
@@ -13,7 +13,7 @@
 + (instancetype _Nullable)maneuverFromDictionary:(NSDictionary * _Nonnull)response {
   OTRRoutingResultManeuver *maneuver = [[OTRRoutingResultManeuver alloc] init];
   
-  maneuver.type = [response[@"type"] unsignedLongValue];
+  maneuver.type = (OTRRoutingResultManeuverType) [response[@"type"] unsignedLongValue];
   maneuver.instruction = response[@"instruction"];
   maneuver.verbalTransitionAlertInstruction = response[@"verbal_transition_alert_instruction"];
   maneuver.verbalPreTransitionInstruction = response[@"verbal_pre_transition_instruction"];
@@ -21,7 +21,7 @@
   maneuver.streetNames = response[@"street_names"];
   maneuver.beginStreetNames = response[@"begin_street_names"];
   maneuver.time = [response[@"time"] unsignedLongValue];
-  maneuver.length = [response[@"length"] doubleValue];
+  maneuver.length = (CGFloat) [response[@"length"] doubleValue];
   maneuver.beginShapeIndex = [response[@"begin_shape_index"] unsignedLongValue];
   maneuver.endShapeIndex = [response[@"end_shape_index"] unsignedLongValue];
   maneuver.toll = [response[@"toll"] boolValue];

@@ -5,7 +5,7 @@ Thanks for taking the time to contribute. Here are some steps and guidelines on 
 
 2. Clone your forked copy of the repository
 
-3. Open `TBMapzenRouting.xcodeproj`
+3. Open `OTRRouting.xcodeproj`
 
 4. Write your code!
 
